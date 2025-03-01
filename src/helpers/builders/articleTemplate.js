@@ -2,7 +2,8 @@ import {fakerRU as faker} from '@faker-js/faker'
 
 export class ArticleBuilder {
     addTitle() {
-        this.articleTitle = `title - ${faker.hacker.noun()} ${faker.hacker.phrase()}`;
+        this.articleTitle = `title - ${faker.hacker.noun()} ${faker.hacker.phrase()} ${Math.floor(Math.random() * 1000) + 1}`;
+
         return this;
     }
 

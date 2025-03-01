@@ -14,5 +14,10 @@
     "@faker-js/faker": "^9.4.0",
     "@playwright/test": "^1.50.0",
     "@types/node": "^22.10.10"
+  },
+  "dependencies": {
+    "allure": "^3.0.0-beta.8",
+    "allure-js-commons": "^3.2.0",
+    "allure-playwright": "^3.1.0"
   }
 }

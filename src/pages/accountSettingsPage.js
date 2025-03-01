@@ -1,4 +1,4 @@
-export class PersonalAccountPage {
+export class AccountSettingsPage {
     constructor(page) {
         this.page = page;
         this.dropdownMenu = page.locator('.dropdown-toggle');

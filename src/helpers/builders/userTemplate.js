@@ -18,9 +18,7 @@ export class UserBuilder {
 
     generateUserData() {
         return {
-            userName: this.userName,
-            userEmail: this.userEmail,
-            userPassword: this.userPassword,
+            userName: this.userName, userEmail: this.userEmail, userPassword: this.userPassword,
         };
     }
 }
