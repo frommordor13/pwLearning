@@ -1,7 +1,9 @@
 import {test, expect} from '@playwright/test';
 import * as allure from 'allure-js-commons';
 import {UserBuilder, ArticleBuilder} from "../src/helpers/builders";
-import {ArticlePage, MainPage, RegistrationPage, AccountProfilePage} from "../src/pages/index";
+import {ArticlePage, MainPage, AccountProfilePage} from "../src/pages/index";
+
+test.use({storageState: 'playwright/auth/userStorage.json'});
 
 let userData;
 
@@ -17,17 +19,10 @@ test.describe('Users article', () => {
 
         const articlePage = new ArticlePage(page);
         const mainPage = new MainPage(page);
-        const regPage = new RegistrationPage(page);
         articleBuilder = new ArticleBuilder().addTitle().addDetails().addBody().addTags().generateArticle();
 
         await test.step('user opens the home page', async () => {
             await mainPage.openBaseUrl('.');
-        });
-        await test.step('user goes to the registration page', async () => {
-            await mainPage.performRegistration();
-        });
-        await test.step('user registers', async () => {
-            await regPage.performSigning(userData.userName, userData.userEmail, userData.userPassword);
         });
         await test.step('User creates an article', async () => {
             await articlePage.publicationArticle(articleBuilder.articleTitle, articleBuilder.articleDetails, articleBuilder.articleBody, articleBuilder.articleTags);

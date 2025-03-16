@@ -8,3 +8,5 @@ node_modules/
 /allure-report/
 /allure-results/
 /.allure/
+/tests/credentials.json
+/playwright/auth/userStorage.json
